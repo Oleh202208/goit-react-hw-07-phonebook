@@ -1,13 +1,12 @@
 import { ContactItem } from 'components/ContactItem/ContactItem';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import styles from './ContactList.module.css';
 import PropTypes from 'prop-types';
-import { selectFilteredContacts } from 'redux/selectors/selectors';
+import { useContacts } from 'hooks/useContacts';
 import { useEffect } from 'react';
 import { fetchContacts, deleteContact } from 'redux/Operations/operations';
 
 export const ContactList = () => {
-  const useContacts = () => useSelector(selectFilteredContacts);
   const dispatch = useDispatch();
   const filteredContacts = useContacts();
 
