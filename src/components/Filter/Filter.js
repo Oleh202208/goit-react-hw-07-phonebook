@@ -8,14 +8,12 @@ export const Filter = () => {
 
   const inputValue = useFilter();
 
+  const handleFilter = e => dispatch(filterContacts(e.currentTarget.value));
+
   return (
     <label className={styles.label}>
       Find contacts by name
-      <input
-        type="text"
-        value={inputValue}
-        onChange={e => dispatch(filterContacts(e.currentTarget.value))}
-      ></input>
+      <input type="text" value={inputValue} onChange={handleFilter}></input>
     </label>
   );
 };
